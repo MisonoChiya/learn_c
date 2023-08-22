@@ -83,3 +83,56 @@ int main()
 	return 0;
 }
 */
+
+/*
+//函数 - 二分查找
+//找到了返回下标
+//没找到返回-1
+int binary_search(int arr[],int k ,int size)
+{
+	int left = 0;
+	int right = size - 1;
+	//循环条件:左右不相等
+	while (left<=right)
+	{
+		//中间
+		int mid = left + (right - left) / 2;
+		//如果中间比要找的元素小
+		if (arr[mid] < k)
+		{
+			//[mid,right]
+			left = mid + 1;
+		}
+		//如果中间比要找的元素大
+		else if (arr[mid] > k)
+		{
+			//[left,mid]
+			right = mid + 1;
+		}
+		else
+		{
+			//找到返回下标
+			return mid;
+		}
+	}
+	//找不到的情况
+	return -1;
+}
+int main()
+{
+	int arr[20] = { 1,2,3,4,5,6,7,8,9,10 };
+	int k = 7;
+	int size = sizeof(arr) / sizeof(arr[0]);
+	int ret = binary_search(arr, k, size);
+	if(ret==-1)
+	{
+		printf("找不到\n");
+	}
+	else
+	{
+		printf("\n找到了,下标是：%d", ret);
+	}
+	return 0;
+}
+*/
+
