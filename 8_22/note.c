@@ -107,7 +107,7 @@ int binary_search(int arr[],int k ,int size)
 		else if (arr[mid] > k)
 		{
 			//[left,mid]
-			right = mid + 1;
+			right = mid - 1;
 		}
 		else
 		{
